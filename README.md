@@ -26,7 +26,7 @@ Podemos emplear las siguientes URL para ese proceso:
 - [Icon Horse](https://icon.horse/icon/domain.com)
 - [Icons Duck](https://icons.duckduckgo.com/ip3/domain) (puede llegar a funcionar en algunos casos)
 - [Google Icon](https://www.google.com/s2/favicons?domain=midomain.com&sz=128)
-- [Google Icon 2](https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE>,SIZE,URL&url=<http://banco.bradesco&size=128)>
+- [Google Icon 2](https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE>,SIZE,URL&url=domain.com&size=128)
 
 Una vez cumplido esto, también nos devolverá "Favicon Hash: hash obtenido", que debemos adicionar como en el paso anterior.
 
