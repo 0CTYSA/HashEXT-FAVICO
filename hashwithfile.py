@@ -1,4 +1,5 @@
-import mmh3, base64
+import mmh3
+import base64
 
 filepath = input("Ingrese la ruta del archivo de imagen: ")
 
