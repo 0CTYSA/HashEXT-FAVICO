@@ -39,23 +39,30 @@ def download_favicon(site_url):
 
     favicon_url = urljoin(site_url, favicon_url)
 
-    # Descargar el favicon
+    # Obtener el nombre del icono
+    parsed_url = urlparse(site_url)
+    icon_name = os.path.basename(parsed_url.netloc)
+
+    # Descargar el favicon con el formato específico
     response = requests.get(favicon_url)
     if response.status_code == 200:
-        # Obtener el nombre del icono
-        parsed_url = urlparse(site_url)
-        icon_name = os.path.basename(parsed_url.netloc)
+        extension = favicon_url.split(".")[-1].lower()
+        if extension in ["ico", "png", "jpg", "jpeg", "gif"]:
+            icon_extension = extension
+        else:
+            icon_extension = "ico"
 
         # Crear la carpeta "icon" si no existe
         if not os.path.exists("icon"):
             os.makedirs("icon")
 
         # Guardar el icono en la carpeta "icon"
-        with open(f"icon/{icon_name}.ico", "wb") as file:
+        with open(f"icon/{icon_name}.{icon_extension}", "wb") as file:
             file.write(response.content)
-            print(f"Icono guardado: {icon_name}.ico")
+        print(f"Icono guardado: {icon_name}.{icon_extension}")
     else:
         print(f"No se pudo descargar el icono para: {site_url}")
+        print(f"Ruta URL del favicon: {favicon_url}")
 
 
 # Ingresar las URLs desde la consola, una por línea
