@@ -42,4 +42,4 @@ def get_favicon_url(site_url):
     return favicon_url
 
 
-print(get_favicon_url('https://www.aeon.co.jp/'))
+print(get_favicon_url('https://secure.ficohsa.com/'))
